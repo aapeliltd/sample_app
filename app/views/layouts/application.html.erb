@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Ruby on rail tutorial sample app | <%= yield(:tit) %></title>
+    <title><%= full_title(yield(:tit)) %></title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+
+  <%= render 'layouts/header' %>
+
+  <%= yield %>
+
+  <%= render 'layouts/footer'  %>
   </body>
 </html>
